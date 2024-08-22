@@ -1,0 +1,9 @@
+services:
+  nginx:
+    image: nginx:latest
+    network_mode: "host"
+    volumes:
+      - ./nginx.conf.linux:/etc/nginx/nginx.conf:ro
+    environment:
+      - NGINX_HOST=${NGINX_HOST:-127.0.0.1}
+      - NGINX_PORT=${NGINX_PORT:-80}
