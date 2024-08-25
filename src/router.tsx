@@ -3,7 +3,7 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
-import NotFound from "./components/notFound";
+import NotFound from "./components/common/notFound";
 const Page = lazy(() => import('./pages/page'));
 
 const wwwRoutes = [
@@ -34,11 +34,14 @@ const router = (subDomain?: string) => createBrowserRouter([
     ] : wwwRoutes,
 ]);
 
-export default function MainRouter() {
-    const hostname = window.location.hostname;
-    const subDomain = hostname.split('.')[0] !== 'localhost'
-        ? hostname.split('.')[0]
-        : undefined;
+const exceptions = ['localhost', 'www'];
 
-    return <RouterProvider router={router(subDomain)} />
+export default function MainRouter() {
+    const subDomain = window.location.hostname.split('.')[0];
+
+    return <RouterProvider router={router(
+        !exceptions.includes(subDomain)
+            ? subDomain
+            : undefined
+    )} />
 }
