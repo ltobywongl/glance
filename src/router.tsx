@@ -5,11 +5,16 @@ import {
 } from "react-router-dom";
 import NotFound from "./components/common/notFound";
 const Page = lazy(() => import('./pages/page'));
+const SigninPage = lazy(() => import('./pages/signin/page'));
 
 const wwwRoutes = [
     {
         path: "/",
         element: <Page />,
+    },
+    {
+        path: "/signin",
+        element: <SigninPage />,
     },
     {
         path: "*",

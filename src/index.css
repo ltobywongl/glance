@@ -6,6 +6,29 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
 @layer base {
@@ -22,7 +45,7 @@
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
-  #root > div > div {
+  #root > div > div, #root > div > main {
     @apply w-full flex-1;
   }
 }

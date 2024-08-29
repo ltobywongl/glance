@@ -4,6 +4,11 @@ import Logo from "./logo";
 
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
+    const pathname = window?.location?.pathname;
+    if (['/signin'].includes(pathname)) {
+        return null;
+    }
 
     const menuItems = [
         {
@@ -45,7 +50,7 @@ export default function App() {
                         Features
                     </Link>
                 </NavbarItem>
-                <NavbarItem isActive>
+                <NavbarItem>
                     <Link color="foreground" href="/docs">
                         Docs
                     </Link>

@@ -5,7 +5,7 @@ export default function ProfileCard() {
   const [isFollowed, setIsFollowed] = useState(false);
 
   return (
-    <Card className="max-w-[340px]">
+    <Card className="w-full max-w-[360px]">
       <CardHeader className="justify-between">
         <div className="flex gap-5">
           <Avatar isBordered radius="full" size="md" src="/logo.png" />
