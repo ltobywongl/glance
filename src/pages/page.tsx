@@ -1,20 +1,9 @@
 import { Button } from "@nextui-org/react";
 import ProfileCard from "../components/pages/card";
-import { useEffect, useState } from "react";
-import { OutputData } from "@editorjs/editorjs/types/data-formats/output-data";
 import useEditor from "../components/hooks/editor";
 
 export default function Page() {
-    const [editorData, setEditorData] = useState<OutputData>();
-    useEditor({ holder: "editor" }, setEditorData);
-    const ed = useEditor({ holder: "editor-read", readOnly: true, data: editorData });
-    console.log(editorData);
-
-    useEffect(() => {
-        if (ed.isEditorReady && editorData) {
-            ed.editor?.render(editorData);
-        }
-    }, [ed.isEditorReady, editorData]);
+    useEditor({ holder: "editor" });
 
     return (
         <main className="md:mx-8 lg:mx-[10%]">
@@ -36,15 +25,10 @@ export default function Page() {
                 </div>
             </section>
             <section>
-                <div className="text-center">Try the editor</div>
+                <div className="text-center text-large font-bold">Try the editor</div>
                 <div className="flex flex-row">
-                    <div className="w-1/2 p-2 border">
-                        <div className="font-semibold">Input</div>
+                    <div className="w-full p-2 border">
                         <div id="editor" />
-                    </div>
-                    <div className="w-1/2 p-2 border">
-                        <div className="font-semibold">Output</div>
-                        <div id="editor-read" />
                     </div>
                 </div>
             </section>

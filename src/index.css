@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -24,4 +25,23 @@
   #root > div > div {
     @apply w-full flex-1;
   }
+}
+
+.ce-popover__items {
+  overflow-y: hidden !important;
+}
+
+h1.ce-header {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2.ce-header {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+h3.ce-header {
+  font-size: large;
+  font-weight: bold;
 }

@@ -12,6 +12,8 @@ const useEditor = (config: EditorConfig, callback?: (data: OutputData) => void) 
 			editorInstance.current = new EditorJS({
 				...config,
                 holder: config.holder ?? "editorjs",
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-expect-error
                 tools: EDITOR_JS_TOOLS,
 				onReady: () => {
 					setIsEditorReady(true);
